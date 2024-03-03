@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Document</title>
+    <link rel="stylesheet" href="DockStyle.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?fmlyMaterial+Icons"
+      rel="stylesheet"
+    />
+    <link rel="javascript" href="Document.js" />
+  </head>
+  <body>
+    <div id="preloader"></div>
+    <div id="topheader">
+      <header>
+        <div class="userlogo">
+          <h1>Sakthivel Kumar</h1>
+          <p>sakthivelkumat63@gmial.com</p>
+        </div>
+        <nav class="navbar">
+          <ul class="nav-links">
+            <li class="nav-link">
+              <a href="#">Control Panal</a>
+            </li>
+            <li class="nav-link">
+              <a href="#">Balance</a>
+            </li>
+            <li class="nav-link">
+              <a href="#">About</a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="logout"
+          id="logouts"
+          onclick="logoutpopup('logoutpopups')"
+        >
+          LogOut
+        </button>
+      </header>
+      <main>
+        <div class="containers">
+          <div class="logoutpopup" id="logoutpopups">
+            <div class="overlay" id="overlay"></div>
+            <div class="popup-content">
+              <ion-icon name="log-out-outline"></ion-icon>
+              <h2>Lougout Now</h2>
+              <p>Do you want leave this page!</p>
+              <div class="controls">
+                <button class="close-btn" id="close-btn">Colse</button>
+                <a href="index.html"
+                  ><button class="submit-btn">Submit</button></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="sidbars">
+            <nav class="Sidebar">
+              <h3>NEW GEN API</h3>
+              <hr />
+              <ul class="side-nav-lins">
+                <li class="side-nav-link">
+                  <a href="#Introduction">Introduction</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#login">1. Login</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#Availability">2. Availablity</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#FareRules">3. Fare Rule</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">4. Pricing</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">5. SeatMap</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">6. Booking</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">7. Ticketing</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">8. Get Booking</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">9. Get Track Sttus</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">10. Get Account Balance</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">Download Sample</a>
+                </li>
+                <li class="side-nav-link">
+                  <a href="#">Support</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="documents">
+            <div class="document">
+              <h3 class="Introduction">
+                <strong>
+                  Riya RESTFUL Web Services (RWS) Reference Manual Edition
+                  1.0</strong
+                >
+              </h3>
+              <p>
+                This document is the Reference manual for API (Application
+                Programming Interface) and includes the Access URL,
+                Authentication, Request and Response formats.
+              </p>
+              <h3 class="history">
+                <strong>API Reference Manual of RWS</strong>
+              </h3>
+              <p>
+                The purpose of the document history is to list the changes made
+                to each edition of the Application Programming Interface (API)
+                User Guide, including the section affected and a description of
+                the change.
+              </p>
+              <br />
+              <table class="vrtable">
+                <tr>
+                  <th>Version</th>
+                  <th>Date</th>
+                  <th>Changes</th>
+                </tr>
+                <tr>
+                  <td class="tdfirst">1.0</td>
+                  <td class="tdfirst">2019-01-01</td>
+                  <td>Initial Version</td>
+                </tr>
+              </table>
+              <h3>Disclaimer</h3>
+              <p>
+                This documentation is the confidential and proprietary
+                information of Riya Travel and may be used, modified, altered,
+                copied, reproduced, or transferred only in accordance with a
+                written license agreement executed by Riya Travel.
+              </p>
+              <br />
+              <hr />
+              <br />
+              <h3 id="Introduction">Introduction</h3>
+              <p>
+                RWS Application Programming Interface (API) by integrated web
+                services called as Riya Web Services (RWS) which offers a means
+                of accessing and using data from its hosted services. It
+                provides a gateway access to all Airlines Tickets booked through
+                Riya Travel as product for an external plug-in. This gateway may
+                be used to develop a separate application, or be integrated with
+                an existing tool of users.
+              </p>
+              <br />
+              <h3>Access URL</h3>
+              <p>
+                Staging URL :
+                <a
+                  target="_blank"
+                  href="http://testrws.mywebcheck.in/travelapi.svc"
+                  >http://testrws.mywebcheck.in/travelapi.svc</a
+                >
+              </p>
+              <p>
+                Production URL :
+                <a target="_blank" href=""></a>
+              </p>
+              <table class="vrtable2">
+                <tr>
+                  <th>Methods</th>
+                  <th>URL</th>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Login</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/Login"
+                      >{URL}/Login</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Availability</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/Availability"
+                      >{URL}/Availability</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Fare Rules</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/GetFareRule"
+                      >{URL}/GetFareRule</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Pricing</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/Pricing"
+                      >{URL}/Pricing</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Seat Map</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/GetAvailSeatMap"
+                      >{URL}/GetAvailSeatMap</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Booking</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/Book"
+                      >{URL}/Book</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Ticketing</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/IssueTicket"
+                      >{URL}/IssueTicket</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Get Booking</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/RetrieveBooking"
+                      >{URL}/RetrieveBooking</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Booking Track Status</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/TrackStatus"
+                      >{URL}/TrackStatus</a
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Get Account Balance</td>
+                  <td>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href="http://testrws.mywebcheck.in/travelapi.svc/GetBalance"
+                      >{URL}/GetBalance</a
+                    >
+                  </td>
+                </tr>
+              </table>
+              <br />
+              <hr />
+              <br />
+              <h3 id="login">1.Login Method</h3>
+              <table class="vrtable2">
+                <tr>
+                  <th>Parameters</th>
+                  <th>Value</th>
+                </tr>
+                <tr>
+                  <td class="tdfirst">TerminalID</td>
+                  <td>will be provided</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Username</td>
+                  <td>will be provided</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Password</td>
+                  <td>will be provided</td>
+                </tr>
+              </table>
+              <br />
+              <h3>1.1 Description</h3>
+              <p>
+                HTTP Basic Authentication is the simplest form of
+                identification. This technique combines Terminal ID, Username
+                and Password to form a single value and passes it through a
+                special HTTP header known as Authorization where they are
+                encoded with Base64. Login method will return the Token that
+                needs to be echoed back in every subsequent request. In case of
+                token expiry, the login method needs to be called again and the
+                updated Token needs to be passed in every subsequent request.
+              </p>
+              <div class="alart">
+                <ion-icon name="alert-circle-outline"></ion-icon>
+                <p>
+                  <strong>Note:</strong> Once token is generated it valid till
+                  end of the day.
+                </p>
+              </div>
+              <br />
+              <h3>1.2 Authentication</h3>
+              <p><strong>HTTP Basic Authentication</strong></p>
+              <p>
+                <strong>Step 1 :</strong> Generate Base64 string with the
+                following logic <strong>TerminalID*Username:Password</strong>
+              </p>
+              <p>
+                <strong>Step 2 :</strong> Apply the Base64 string in request
+                <strong>header</strong> section as mentioned below
+              </p>
+              <table class="vrtable2">
+                <tr>
+                  <th>Key</th>
+                  <th>Value</th>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Authorization</td>
+                  <td>
+                    Base64 string (e.g:UaJjLkFCT0AwMDcSsMDEqbHAScHChscAHWWFAMTI)
+                  </td>
+                </tr>
+              </table>
+              <br />
+              <h3>1.3 Response</h3>
+              <h4 class="subhad">Success</h4>
+              <div class="viewcode">
+                <pre>
+                  <code id="sucscode">
+  {
+    "AgentID": "XXXXXXXXXXXX",
+    "TerminalID": "XXXXXXXXXXXX",
+    "UserName": "XXXXXXXXXXXX",
+    "Token": "Njg3K0FINC1SU05LTDA0MDAxMDEwNytBSDQtOTcwK0FINC1kaGFuYWErQ=",
+    "Status": {
+      "ResultCode": "1",
+      "Error": "",
+      "SequenceID": "1221497289115"
+    }
+  }
+                  </code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="copybtn"
+                  onclick="copycontentcode('copybtn','sucscode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <h4 class="subhad">Failure</h4>
+              <div class="viewcode">
+                <pre>
+                  <code id="failcode">
+  {
+    "AgentID": "",
+    "Status": {
+      "Error": "InvalidCredentials",
+      "ResultCode": "0",
+      "SequenceID": "13070550069411"
+    },
+    "TerminalID": "",
+    "Token": "",
+    "UserName": ""
+  }
+                  </code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="failcopybtn"
+                  onclick="copycontentcode('failcopybtn','failcode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <h4 class="subhad">Exception</h4>
+              <div class="viewcode">
+                <pre>
+                  <code id="expcode">
+  {
+    "AgentID": "",
+    "Status": {
+      "Error": "EX-Unabletoauthenticate",
+      "ResultCode": "-1",
+      "SequenceID": "13070550069411"
+    },
+    "TerminalID": "",
+    "Token": "",
+    "UserName": ""
+  }
+                  </code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="expcopybtn"
+                  onclick="copycontentcode('expcopybtn','expcode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <br />
+              <h3 id="Availability">2.Availability</h3>
+              <h3>2.1 Description</h3>
+              <p>
+                Availability method provides available flight information along
+                with the cheapest fare options. The sample request includes
+                single AvailInfo query for Oneway journey. In case of Roundtrip,
+                this field should be added with the return flight query. Once
+                the requested query is parsed and validated, the booking engine
+                start searching for the best option in all possible sources. If
+                the search is successful it will respond the flight details in
+                ItineraryFlightList object.
+              </p>
+              <h3>2.2 Data Format and Details</h3>
+              <table class="vrtable3">
+                <tr>
+                  <th>Field Name</th>
+                  <th>Data Type</th>
+                  <th>Value</th>
+                </tr>
+                <tr>
+                  <td class="tdfirst">AgentID</td>
+                  <td class="tdfirst">String</td>
+                  <td>Your Agent ID</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">TerminalID</td>
+                  <td class="tdfirst">String</td>
+                  <td>Your Terminal ID</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Username</td>
+                  <td class="tdfirst">String</td>
+                  <td>Your Username</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">AppType</td>
+                  <td class="tdfirst">String</td>
+                  <td>Default Value API</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Version</td>
+                  <td class="tdfirst">String</td>
+                  <td>API version</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">TripType</td>
+                  <td class="tdfirst">String</td>
+                  <td>
+                    Trip Type shows the type of booking. It may be an O-Oneway
+                    or R-Roundtrip.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">AirlineID</td>
+                  <td class="tdfirst">String</td>
+                  <td>
+                    Two letter Airline Code. In case of empty values system
+                    consider as all airlines.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">DepartureStation</td>
+                  <td class="tdfirst">String</td>
+                  <td>3 Letter IATA Departure Airport code</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">ArrivalStation</td>
+                  <td class="tdfirst">String</td>
+                  <td>3 Letter IATA Arrival Airport code</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">FlightDate</td>
+                  <td class="tdfirst">Date</td>
+                  <td>
+                    Travel date should be in the following format (yyyymmdd)
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">FarecabinOption</td>
+                  <td class="tdfirst">String</td>
+                  <td>
+                    Cabin Identification E- Economy, P- Premium Economy, B-
+                    Business and F- First
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">FareType</td>
+                  <td class="tdfirst">String</td>
+                  <td>
+                    Fare Identification N- Normal Fare, C- Corporate Fare and R-
+                    Retail Fare
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">OnlyDirectFlight</td>
+                  <td class="tdfirst">Boolean</td>
+                  <td>
+                    True –System responds only direct flight. False – System
+                    responds all the flights.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">AdultCount</td>
+                  <td class="tdfirst">Integer</td>
+                  <td>Minimum of 1 and Maximum up to 9</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">ChildCount</td>
+                  <td class="tdfirst">Integer</td>
+                  <td>Total no of Adults and child can be maximum 9</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">InfantCount</td>
+                  <td class="tdfirst">Integer</td>
+                  <td>
+                    Minimum of 1 and Maximum up to 4. Infant alone not allowed
+                    to travel
+                  </td>
+                </tr>
+              </table>
+              <h3>Request</h3>
+              <div class="viewcode">
+                <pre>
+                  <code id="avlrqstcode">
+  {
+    "AgentInfo": {
+      "AgentId": "xxxxxxxxxxx",
+      "TerminalId": "xxxxxxxxxxx",
+      "UserName": "xxxxxx",
+      "AppType": "API",
+      "Version": "V1.0"
+    },
+    "TripType": "O",
+    "AirlineID": "",
+    "AvailInfo": [
+      {
+        "DepartureStation": "BOM",
+        "ArrivalStation": "DEL",
+        "FlightDate": "20221114",
+        "FarecabinOption": "E",
+        "FareType": "N",
+        "OnlyDirectFlight": false
+      }
+    ],
+    "PassengersInfo": {
+      "AdultCount": "1",
+      "ChildCount": "0",
+      "InfantCount": "0"
+    }
+  }
+                  </code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="avlrqstcopybtn"
+                  onclick="copycontentcode('avlrqstcopybtn','avlrqstcode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <h3>Response</h3>
+              <h3 class="subhad">Success</h3>
+              <p class="rsppera">
+                Refer Attached - Sample JSON Request and Response
+              </p>
+              <h4 class="subhad">Failure</h4>
+              <div class="viewcode">
+                <pre>
+                  <code id="avlfailcode">
+  {
+    "ItineraryFlightList": null,
+    "Trackid": null,
+    "Status": {
+      "Error": "Request format is invalid",
+      "ResultCode": "0",
+      "SequenceID": "11413949843534"
+    }
+  }
+                  </code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="avlfailcopybtn"
+                  onclick="copycontentcode('avlfailcopybtn','avlfailcode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <h4 class="subhad">Exception</h4>
+              <div class="viewcode">
+                <pre>
+                  <code id="avlexpcode">
+  {
+    "ItineraryFlightList": null,
+    "Trackid": null,
+    "Status": {
+      "Error": "Ex-Unable to fetch the flight results.",
+      "ResultCode": "0",
+      "SequenceID": "11413949898434"
+    }
+  }
+                  </code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="avlexpcopybtn"
+                  onclick="copycontentcode('avlexpcopybtn','avlexpcode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <br />
+              <h3 id="FareRules">3.Fare Rules</h3>
+              <h3>2.1 Description</h3>
+              <p>
+                GetFarerule method is used to get the fare rules and condition
+                of a specific flight option. It contains the fare basis code and
+                the relevant details associated with it, such as restrictions
+                and penalties.
+              </p>
+              <h3>2.2 Data Format and Details</h3>
+              <table class="vrtable3">
+                <tr>
+                  <th>Field Name</th>
+                  <th>Data Type</th>
+                  <th>Value</th>
+                </tr>
+                <tr>
+                  <td class="tdfirst">AgentID</td>
+                  <td class="tdfirst">String</td>
+                  <td>Your Agent ID</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">TerminalID</td>
+                  <td class="tdfirst">String</td>
+                  <td>Your Terminal ID</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Username</td>
+                  <td class="tdfirst">String</td>
+                  <td>Your Username</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">AppType</td>
+                  <td class="tdfirst">String</td>
+                  <td>Default Value API</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">Version</td>
+                  <td class="tdfirst">String</td>
+                  <td>API version</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">FlightID</td>
+                  <td class="tdfirst">String</td>
+                  <td>Pass the same value from Availability response.</td>
+                </tr>
+                <tr>
+                  <td class="tdfirst">TrackId</td>
+                  <td class="tdfirst">String</td>
+                  <td>Unique reference Id from Availability response.</td>
+                </tr>
+              </table>
+              <h3>Request</h3>
+              <div class="viewcode">
+                <pre>
+  <code id="rulerqstcode">
+  {
+    "AgentInfo": {
+      "AgentId": "XXXXXX",
+      "TerminalId": "XXXXXX",
+      "UserName": "XXXXXXX",
+      "AppType": "API",
+      "Version": "V1.0"
+    },
+    "FlightsInfo": [
+      {
+        "FlightID": "2506"
+      }
+    ],
+    "Trackid": "RA1113553561662920221114111435"
+  }</code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="rulerqstcopybtn"
+                  onclick="copycontentcode('rulerqstcopybtn','rulerqstcode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <h3>Response</h3>
+              <h3 class="subhad">Success</h3>
+              <p class="rsppera">
+                Refer Attached - Sample JSON Request and Response
+              </p>
+              <h4 class="subhad">Failure</h4>
+              <div class="viewcode">
+                <pre>
+                  <code id="rulefailcode">
+  {
+    "FareRuleInfo": null,
+    "Status": {
+      "Error": "The requested token was timed out.",
+      "ResultCode": "0",
+      "SequenceID": "11193481818929"
+    }
+  }
+                  </code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="rulefailcopybtn"
+                  onclick="copycontentcode('rulefailcopybtn','rulefailcode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <h4 class="subhad">Exception</h4>
+              <div class="viewcode">
+                <pre>
+                  <code id="ruleexpcode">
+  {
+    "FareRuleInfo": null,
+    "Status": {
+      "Error": "EX-Unable to get FareRule for the requested flight",
+      "ResultCode": "-1",
+      "SequenceID": "11205462274130"
+    }
+  }
+  </code>
+                </pre>
+                <button
+                  class="cpoybtn"
+                  id="ruleexpcopybtn"
+                  onclick="copycontentcode('ruleexpcopybtn','ruleexpcode')"
+                >
+                  <ion-icon name="clipboard-outline"></ion-icon>Copy
+                </button>
+              </div>
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="Document.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
